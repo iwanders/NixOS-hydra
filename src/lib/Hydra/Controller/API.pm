@@ -30,7 +30,10 @@ sub buildToHash {
         system => $build->system,
         nixname => $build->nixname,
         finished => $build->finished,
-        timestamp => $build->timestamp
+        timestamp => $build->timestamp,
+        nixname => $build->get_column('nixname'),
+        buildstatus => undef,
+        priority => undef
     };
 
     if($build->finished) {
